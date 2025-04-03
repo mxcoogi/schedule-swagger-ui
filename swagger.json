@@ -32,7 +32,7 @@
           "content": {
             "application/json;charset=UTF-8": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateRequestDto"
+                "$ref": "#/components/schemas/UserUpdateRequestDto"
               }
             }
           },
@@ -188,7 +188,7 @@
           "content": {
             "application/json;charset=UTF-8": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateRequestDto"
+                "$ref": "#/components/schemas/ScheduleUpdateRequestDto"
               }
             }
           },
@@ -833,7 +833,7 @@
   },
   "components": {
     "schemas": {
-      "UpdateRequestDto": {
+      "UserUpdateRequestDto": {
         "required": [
           "updateUserName"
         ],
@@ -864,6 +864,21 @@
           "updatedAt": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "ScheduleUpdateRequestDto": {
+        "required": [
+          "updateScheduleContents",
+          "updateScheduleTitle"
+        ],
+        "type": "object",
+        "properties": {
+          "updateScheduleTitle": {
+            "type": "string"
+          },
+          "updateScheduleContents": {
+            "type": "string"
           }
         }
       },

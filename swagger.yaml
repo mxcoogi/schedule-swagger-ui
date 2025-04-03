@@ -25,7 +25,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/UpdateRequestDto"
+              "$ref": "#/components/schemas/UserUpdateRequestDto"
         required: true
       responses:
         '200':
@@ -123,7 +123,7 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/UpdateRequestDto"
+              "$ref": "#/components/schemas/ScheduleUpdateRequestDto"
         required: true
       responses:
         '200':
@@ -525,7 +525,7 @@ paths:
                 type: string
 components:
   schemas:
-    UpdateRequestDto:
+    UserUpdateRequestDto:
       required:
         - updateUserName
       type: object
@@ -548,6 +548,16 @@ components:
         updatedAt:
           type: string
           format: date-time
+    ScheduleUpdateRequestDto:
+      required:
+        - updateScheduleContents
+        - updateScheduleTitle
+      type: object
+      properties:
+        updateScheduleTitle:
+          type: string
+        updateScheduleContents:
+          type: string
     CommentResponseDto:
       type: object
       properties:
